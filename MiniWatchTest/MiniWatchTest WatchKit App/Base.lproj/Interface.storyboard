@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16097" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="MiniWatchTest_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <table alignment="left" id="ya3-iP-8vi">
+                            <items>
+                                <tableRow identifier="MealRowType" id="Jpa-WM-stE" customClass="MealRowController" customModule="MiniWatchTest_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="60" alignment="left" id="RLf-uv-WNc">
+                                        <items>
+                                            <group alignment="left" verticalAlignment="center" layout="vertical" id="Qhx-Mk-Aaw">
+                                                <items>
+                                                    <label alignment="left" text="café" numberOfLines="0" id="iqi-zd-kDO"/>
+                                                    <label alignment="left" text="07:00" id="MWQ-nQ-5tP"/>
+                                                </items>
+                                            </group>
+                                            <imageView width="20" height="20" alignment="right" verticalAlignment="center" image="circle.fill" catalog="system" id="xiB-JM-oEy">
+                                                <color key="tintColor" red="0.34901960780000002" green="0.4941176471" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </imageView>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="status" destination="xiB-JM-oEy" id="6za-nt-XbU"/>
+                                        <outlet property="timeLabel" destination="MWQ-nQ-5tP" id="0ab-eB-tIt"/>
+                                        <outlet property="titleLabel" destination="iqi-zd-kDO" id="cab-ys-pGj"/>
+                                        <segue destination="Ory-Sl-w3D" kind="push" identifier="config" id="GNT-iD-pDY"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="ya3-iP-8vi" id="KzZ-Jt-4tt"/>
+                        <segue destination="bVz-x5-7Ev" kind="relationship" relationship="nextPage" id="bRs-vb-1A7"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1293" y="154"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="2Jd-nV-Sam">
+            <objects>
+                <controller id="bVz-x5-7Ev">
+                    <items>
+                        <group width="1" height="1" alignment="center" verticalAlignment="center" layout="vertical" id="fnM-WR-d4F">
+                            <items>
+                                <label width="1" alignment="left" text="Refeições Certas" textAlignment="center" numberOfLines="0" id="lan-pX-XKb"/>
+                                <group width="1" alignment="left" id="gX3-h5-Cf2">
+                                    <items>
+                                        <label width="1" alignment="left" text="30 / 70%" textAlignment="center" id="Gjd-iu-pXt">
+                                            <color key="textColor" red="0.39665943380000002" green="0.85809940100000004" blue="0.49013745780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <separator alignment="left" id="mlT-xM-wmI"/>
+                                <label width="1" alignment="left" text="Refeições Erradas" textAlignment="center" numberOfLines="0" id="WqW-Yf-RGc"/>
+                                <group width="1" alignment="left" id="hpl-uS-fYk">
+                                    <items>
+                                        <label width="1" alignment="left" text="10 / 30%" textAlignment="center" id="E5A-Xt-WsA">
+                                            <color key="textColor" red="0.90008777380000005" green="0.2110249102" blue="0.3294050992" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <separator alignment="left" id="dkP-DX-HNm"/>
+                                <group width="1" alignment="left" id="dZz-Et-f49">
+                                    <items>
+                                        <label width="1" alignment="left" text="Mais Irregular" textAlignment="center" numberOfLines="0" id="Uvm-2I-kTd"/>
+                                    </items>
+                                </group>
+                                <label width="1" alignment="left" text="Café da Manhã" textAlignment="center" id="qLV-pG-JGU">
+                                    <color key="textColor" red="0.43968814610000001" green="0.9452940822" blue="0.91373521089999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </label>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1690" y="154"/>
+        </scene>
+        <!--Config-->
+        <scene sceneID="rwl-Gz-obO">
+            <objects>
+                <controller identifier="Config" id="Ory-Sl-w3D" customClass="MealConfigInterfaceController" customModule="MiniWatchTest_WatchKit_Extension">
+                    <items>
+                        <group width="136" alignment="center" layout="vertical" spacing="10" id="t3Q-vq-wCt">
+                            <items>
+                                <label alignment="left" text="Título:" id="cV4-HA-DKT"/>
+                                <textField width="1" alignment="left" text="Título" placeholder="Título" id="rbm-Kb-XB8"/>
+                                <label alignment="left" text="Horário:" id="OCe-dr-slm"/>
+                                <group width="1" height="100" alignment="left" spacing="3" id="lcR-08-vTF">
+                                    <items>
+                                        <picker width="60" height="1" alignment="left" verticalAlignment="center" focusStyle="sequence" id="YPy-1E-WHl"/>
+                                        <label alignment="center" verticalAlignment="center" text=":" id="RRe-X7-zLp"/>
+                                        <picker width="60" height="1" alignment="right" verticalAlignment="center" focusStyle="sequence" id="tN0-F5-bEi"/>
+                                    </items>
+                                </group>
+                                <button width="1" alignment="left" title="Save" id="e9a-Th-RSz">
+                                    <color key="backgroundColor" red="0.34901960780000002" green="0.4941176471" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="save" destination="Ory-Sl-w3D" id="erM-bq-YTI"/>
+                                        <segue destination="AgC-eL-Hgc" kind="push" id="LDp-K5-KY2"/>
+                                    </connections>
+                                </button>
+                                <button width="1" alignment="left" title="Remove" id="B8Y-uP-Mn5">
+                                    <color key="backgroundColor" red="0.74901960784313726" green="0.38823529411764707" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="remove" destination="Ory-Sl-w3D" id="ksm-GQ-wS3"/>
+                                        <segue destination="AgC-eL-Hgc" kind="push" id="8If-Uf-R1l"/>
+                                    </connections>
+                                </button>
+                            </items>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="hourPicker" destination="YPy-1E-WHl" id="8Hk-9U-fia"/>
+                        <outlet property="minutePicker" destination="tN0-F5-bEi" id="DcM-KE-ihZ"/>
+                        <outlet property="titleText" destination="rbm-Kb-XB8" id="8Sm-Pq-dEs"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="524" y="155"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" numberOfLines="0" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                        <segue destination="eXb-UN-Cd0" kind="relationship" relationship="dynamicInteractiveNotificationInterface" id="mpB-YA-K8N"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="973" y="728"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="MiniWatchTest_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="973" y="1138"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="Niz-AI-uX2">
+            <objects>
+                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="MiniWatchTest_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="1293" y="728"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="8If-Uf-R1l"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="circle.fill" catalog="system" width="128" height="121"/>
+    </resources>
+</document>
